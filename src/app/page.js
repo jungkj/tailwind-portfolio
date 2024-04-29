@@ -9,22 +9,20 @@ import {AiFillGoogleCircle, AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import { HeroHighlight, Highlight } from "../../components/ui/hero-highlight.tsx";
 import { LampContainer } from "../../components/ui/lamp";
 import { BackgroundBeams } from "../../components/ui/background-beams";
-import { Boxes } from "../../components/ui/background-boxes";
+import { MacbookScroll } from "../../components/ui/macbook-scroll";
 import { cn } from "../../components/utils/cn";
 import { motion } from "framer-motion";
+// import Link from next/link;
 // Shadcn Imports
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "../../@/components/ui/hover-card"
+
 import { CalendarDays } from "lucide-react"
 import { Button } from "../../@/components/ui/button"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "../../@/components/ui/avatar"
+
 
 
 
@@ -77,17 +75,19 @@ export default function Home() {
                 }}
                 className="text-2xl -mt-4 px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
                 >
-                  <Highlight>Software Engineer</Highlight> and {" "}
-            <Highlight> Data Nerd</Highlight>
+                  <Highlight>Software Engineer and Data Nerd</Highlight>
             </motion.h1>
             
           </HeroHighlight>
 
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 ">
-            <AiFillGithub/>
-            <AiFillGoogleCircle/>
-            <AiFillLinkedin/>
+            <HoverCard>
+              <HoverCardTrigger><a href ="mailto:jungkj@bc.edu"><AiFillGoogleCircle/></a></HoverCardTrigger>
+              <HoverCardContent className="w-80"><div className="text-sm">Click to send me an email!</div></HoverCardContent>
+            </HoverCard>
+            <a href ="https://github.com/jungkj"><AiFillGithub/></a>
+            <a href ="https://www.linkedin.com/in/ki-hwan-andy-jung/"><AiFillLinkedin/></a>
           </div>
           {/* <div className="mx-auto bg-gradient-to-b from-gray-600 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
             <Image src={char} layout="flex" objectFit = "cover" alt = "hero img"/>
@@ -97,7 +97,13 @@ export default function Home() {
         <section>
           <div>
             <h3 className="text-3xl py-1">Here is some of what I can do</h3>
-
+            <MacbookScroll
+        title={
+          <span>
+            This Macbook is built with Tailwindcss. <br /> No kidding.
+          </span>
+          }
+          />
             <p className="text-mid py-2 leading-8 text-gray-800 dark:text-gray-200"></p>
           </div>
 
